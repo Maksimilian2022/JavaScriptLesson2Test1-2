@@ -1,7 +1,6 @@
 function numberCheck(num) {
-    for (let index = 2; index < num; index++) {
+    for (let index = 2; index <= num; index++) {
         if (num % index === 0 && !(index === num)) {
-            console.log(index)
             return false
         }
     return true
@@ -10,8 +9,8 @@ function numberCheck(num) {
 
 
 
-
-function primeNumberSearch(count) {
+function primeNumberSearch() {
+    let count = process.argv[2]
     let primeNumbers = [];
         for (let i = 1; primeNumbers.length < count; i++) {
             if (numberCheck(i)) {
@@ -21,5 +20,5 @@ function primeNumberSearch(count) {
     return primeNumbers
 }
 
-console.log(primeNumberSearch(10))
+console.log(primeNumberSearch())
 

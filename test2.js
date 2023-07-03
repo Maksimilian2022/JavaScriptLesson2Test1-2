@@ -43,7 +43,7 @@ let goodsArray = {
 
 let baskets = {
     "good1": {
-        "good1": "good",
+        "good1": "good1",
         "amount": 5                  
     },
     "good2": {
@@ -69,14 +69,17 @@ function totalSumm() {
     for (const good in baskets) {
         summ += goodsArray[good]["price"] * baskets[good]["amount"]
     }
-    return summ
+    return `totalSumm ${summ}`
 }
+
+console.log(totalSumm())
 
 addGood("vodka", 10)
 console.log(baskets)
 
-deleteGood("vodka")
+deleteGood("good2")
 console.log(baskets)
+
 
 console.log(totalSumm())
 
