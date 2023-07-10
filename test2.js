@@ -41,47 +41,50 @@ let goodsArray = {
     }
 }
 
-let baskets = {
-    "good1": {
-        "good1": "good1",
-        "amount": 5                  
+let baskets = [
+    {"good": "good1",
+     "amount": 5                  
     },
-    "good2": {
-        "good2": "good2",
-        "amount": 99                   
+
+    {"good": "good2",
+     "amount": 99                   
+    }
+]
+
+function addGood(good, count) {
+    baskets.push({"good": good, "amount": count})
+}
+
+
+function deleteGood(good) {
+    for (const index in baskets) {
+        if (good === baskets[index]["good"]) {
+            baskets.splice(index, 1)
+        }
     }
 }
 
-function addGood(good, count) {
-    baskets[good] = {"good": good, "amount": count}
-}
-
-function deleteGood(good) {
-    delete baskets[good]
-}
-
 function deleteAll() {
-    baskets = {}
+    baskets = []
 }
 
 function totalSumm() {
     let summ = 0
-    for (const good in baskets) {
-        summ += goodsArray[good]["price"] * baskets[good]["amount"]
+  
+    for (const element of baskets) {
+        good = element["good"]
+        summ += goodsArray[good]["price"] * element["amount"]
     }
     return `totalSumm ${summ}`
 }
+
+
 
 console.log(totalSumm())
 
 addGood("vodka", 10)
 console.log(baskets)
 
-deleteGood("good2")
-console.log(baskets)
-
-
-console.log(totalSumm())
-
 deleteAll()
+deleteGood("good2")
 console.log(baskets)

@@ -9,8 +9,8 @@ function numberCheck(num) {
 
 
 
-function primeNumberSearch() {
-    let count = process.argv[2]
+function primeNumberSearch(num) {
+    let count = num
     let primeNumbers = [];
         for (let i = 1; primeNumbers.length < count; i++) {
             if (numberCheck(i)) {
@@ -20,5 +20,5 @@ function primeNumberSearch() {
     return primeNumbers
 }
 
-console.log(primeNumberSearch())
+console.log(primeNumberSearch(10))
 
