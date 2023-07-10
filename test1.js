@@ -10,9 +10,8 @@ function numberCheck(num) {
 
 
 function primeNumberSearch(num) {
-    let count = num
     let primeNumbers = [];
-        for (let i = 1; primeNumbers.length < count; i++) {
+        for (let i = 1; primeNumbers.length < num; i++) {
             if (numberCheck(i)) {
                 primeNumbers.push(i)
             }
