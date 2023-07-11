@@ -70,12 +70,14 @@ function deleteAll() {
 
 function totalSumm() {
     let summ = 0
+    let count = 0
   
     for (const element of baskets) {
         good = element["good"]
         summ += goodsArray[good]["price"] * element["amount"]
+        count += element["amount"]
     }
-    return `totalSumm ${summ}`
+    return {"totalSumm": summ, "totalCount": count}
 }
 
 
